@@ -1,0 +1,5 @@
+# Project exclude paths
+/manayDatasource/target/
+/socket/target/
+/springboot/target/
+/strategic-models-23/target/

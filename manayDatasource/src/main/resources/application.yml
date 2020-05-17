@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    #interview数据库
+    interview:
+      url: jdbc:mysql://localhost:3306/interview
+      username: root
+      password: 123456
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: interviewMavenDataSource
+    #interview-maven
+    interviewmaven:
+      url: jdbc:mysql://localhost:3306/interview-maven
+      username: root
+      password: 123456
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: interviewDataSource
