@@ -1,0 +1,59 @@
+反射技术
+可以动态根据class文件获取类的信息内容 类的名称、属性（字段）、方法、实例化对象、动态调用某个方法
+比如属性或者方法是私有的，都可以通过反射技术实现调用
+反射最大的优势：帮助程序实现扩展功能
+缺点：违背了面向对象的设计原则，不安全
+
+应用场景
+1 jdbc驱动连接加载 class.forName("")
+2 springIOC容器框架 <bean id="userService" class="类的完整路径">
+3 自定义注解（AOP+反射）
+4 第三方框架
+5 代码生成，逆向生成Java代码
+6 破解常用的单例写法
+
+calss UserEntity{
+    private String name;
+    private String userId;
+}
+
+获取class方式
+Class userClass = UserEntity.class;
+Class<?> classInfo = Class.forName("com.example.UserEntity");
+Class<? extends UserEntity> classInfo = new UserEntity().getClass();
+
+// 实例化对象 无参构造函数
+UserEntity user = (UserEntity) classInfo.newInstance();
+
+代码生成器
+public interface OrderService{
+    String addOrder(String orderId, String OrderName) {
+        return "xxx";
+    }
+}
+需求，生成实现类
+代码思路：
+1 使用Java的反射机制拼接orderServiceImpl.java的实现代码
+2 java 编译为 .class文件
+3 程序使用类加载器读取去orderServiceImpl.class到内存中
+
+反射在运行时，动态获取类型信息
+接口信息、成员信息、方法信息、构造方法信息等，根据这些动态获取到的信息创建对象、访问/修改成员、调用方法等
+
+Class类
+每个已加载的类在内存都有一份类信息，每个对象都有指向它所属类信息的引用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,6 +21,7 @@
         <module>manayDatasource</module>
         <module>socket</module>
         <module>strategic-models-23</module>
+        <module>reflex</module>
     </modules>
 
     <parent>
